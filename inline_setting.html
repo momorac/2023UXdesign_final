@@ -6,9 +6,11 @@
     stock setting : 종목 정보 / 이벤트 / 목표 손익률
     -->
     <meta charset="utf-8">
+
+    <link href="style_main.css" rel="stylesheet">
     <style>
         * {
-            font-family: 'DungGeunMo';
+            font-family: 'DOSGothic';
             src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
             font-weight: normal;
             font-style: normal;
@@ -55,7 +57,7 @@
             /* background-color: rgb(30, 30, 30); */
             box-sizing: border-box;
             height: 90%;
-            margin: 30px;
+            margin: 50px;
 
             text-align: left;
 
@@ -89,6 +91,20 @@
             cursor: pointer;
         }
 
+        .buttonset {
+            height: 50px;
+            margin-bottom: 30px;
+            display: block;
+            position: relative;
+            top: -20px;
+            left: 10px;
+        }
+
+        #languageButtons>button,
+        #currencyButtons>button {
+            width: 80px;
+        }
+
         #backIcon {
             width: 30px;
             height: 30px;
@@ -102,7 +118,7 @@
 
 <body>
     <nav>
-        <button id = "back" title="back">
+        <button id="back" title="back">
             <img id="backIcon" src="https://static.thenounproject.com/png/644039-200.png" alt="back">
         </button>
     </nav>
@@ -110,15 +126,41 @@
     <div id="title">SETTING</div>
     <main>
         <div id="setting">
-            <div class="setdiv" style="margin-right: 20px;">
+            <div class="setdiv">
                 <h1>ㅤBasic Option</h1>
-                <hr style="border-color: aqua; height:2px;">
-                <p>Language</p>
-                <p>Currency</p>
-                <p>Theme</p>
-                <p>Font</p>
+                <div id="basicSet">
+                    <hr style="border-color: aqua; height:2px;">
 
+                    <h2>ㅤLanguage</h2>
+                    <div class="buttonset" id="languageButtons">
+                        <button>한국어</button>
+                        <button>ENG</button>
+                    </div>
 
+                    <h2>ㅤCurrency</h2>
+                    <div class="buttonset" id="currencyButtons">
+                        <button>₩ 원화</button>
+                        <button>$ 달러</button>
+                    </div>
+
+                    <h2>ㅤTheme</h2>
+                    <div class="buttonset" id="themeButtons">
+                        <button>1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button>4</button>
+                    </div>
+
+                    <h2>ㅤFont</h2>
+                    <div class="buttonset" id="fontButtons">
+                        <button>1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button>4</button>
+                        <button>5</button>
+                    </div>
+
+                </div>
             </div>
 
             <div class="setdiv" style="margin-left: 20px;">
@@ -135,6 +177,52 @@
 
 </body>
 <script>
+    const fontButtons = document.getElementById('fontButtons').querySelectorAll('button');
+
+    fontButtons.forEach((button, index) => {
+        button.addEventListener('click', function () {
+            // 여기서 폰트 설정
+            let font;
+            switch (index) {
+                case 0:
+                    font = 'NEODunGeunMo';
+                    break;
+                case 1:
+                    font = 'DOSGothic';
+                    break;
+                case 2:
+                    font = 'DunGeunMo';
+                    break;
+                case 3:
+                    font = 'galmuri11';
+                    break;
+                case 4:
+                    font = 'galmuri11BOLD';
+                    break;
+                default:
+                    font = 'NEODunGeunMo';
+                    break;
+            }
+
+            // 폰트 변경
+            document.querySelectorAll('*').forEach(element => {
+                element.style.fontFamily = font;
+            });
+
+            // 로컬 스토리지에 폰트 정보 저장
+            localStorage.setItem('selectedFont', font);
+        });
+    });
+
+    // 로컬 스토리지에서 폰트 정보 가져와서 적용
+    const selectedFont = localStorage.getItem('selectedFont');
+    if (selectedFont) {
+        document.querySelectorAll('*').forEach(element => {
+            element.style.fontFamily = selectedFont;
+        });
+    }
+
+    //뒤로가기 버튼
     document.getElementById('back').addEventListener('click', function () {
         window.location.href = 'main.html';
     });

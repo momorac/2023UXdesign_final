@@ -49,6 +49,13 @@
 </body>
 
 <script>
+    const selectedFont = localStorage.getItem('selectedFont');
+    if (selectedFont) {
+        document.querySelectorAll('*').forEach(element => {
+            element.style.fontFamily = selectedFont;
+        });
+    }
+
     let day = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 
     const dateElement = document.getElementById('date');                // html의 date 요소 가져옴
@@ -56,7 +63,7 @@
     //formattedDate로 현재 날짜 가져오기
     const formattedDate = curTime.getFullYear() + "/" + curTime.getMonth() + "/" + curTime.getDate()
         + "(" + day[curTime.getDay()] + ') ' + (curTime.getHours() < 10 ? '0' + curTime.getHours() : curTime.getHours()) + ':'
-        + (curTime.getMinutes() < 10 ? '0' + curTime.getMinutes() : curTime.getMinutes()) + (curTime.getHours() < 12 ? ' AM' : ' PM');
+        + (curTime.getMinutes() < 10 ? '0' + curTime.getMinutes() : curTime.getMinutes()) + (curTime.getHours() < 12 ? ' AMㅤ' : ' PMㅤ');
 
     //html태그의 innerHTML값 수정
     dateElement.innerHTML = formattedDate;

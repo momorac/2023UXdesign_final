@@ -1,8 +1,40 @@
+@font-face {
+    font-family: 'DOSGothic'; 
+    font-style: 'normal';
+    font-weight: normal; 
+    src: url('font/DOSGothic.ttf') format('truetype'); 
+}
+@font-face {
+    font-family: 'DunGeunMo'; 
+    font-style: 'normal';
+    font-weight: normal; 
+    src: url('font/DungGeunMo.ttf') format('truetype'); 
+}
+@font-face {
+    font-family: 'NEODunGeunMo'; 
+    font-style: 'normal';
+    font-weight: normal; 
+    src: url('font/NeoDunggeunmoPro-Regular.woff'); 
+}
+@font-face {
+    font-family: 'galmuri11'; 
+    font-style: 'normal';
+    font-weight: normal; 
+    font-size-adjust: auto;
+    src: url('font/Galmuri11.ttf'); 
+}
+@font-face {
+    font-family: 'galmuri11BOLD'; 
+    font-style: 'normal';
+    font-weight: normal; 
+    font-size-adjust: auto;
+    src: url('font/Galmuri11-Bold.ttf'); 
+}
+
+
+
 * {
-    font-family: 'DungGeunMo';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+    font-family: 'NEODunGeunMo';
     color: aqua;
 }
 
