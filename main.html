@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="style_chart.css" rel="stylesheet">
+    <link href="style_main.css" rel="stylesheet">
+    <script type="module" src="finance.mjs"></script>
+    <script src="chart.js"></script>
+
+</head>
+
+<body>
+
+    <nav>
+        <button id="setting" title="setting">
+            <img id="setIcon" src="https://static.thenounproject.com/png/1507878-200.png" alt="setting">
+        </button>
+        <button id="info" title="info">
+            <img id="infoIcon" src="https://cdn-icons-png.flaticon.com/512/408/408196.png" alt="info">
+        </button>
+    </nav>
+
+    <header>
+        <div id="stockName">삼성전자</div>
+        <div id="etc">
+            <div id="date">date</div>
+            <div id="curPrice">26,400<small> ₩</small></div>
+            <div id="compared">
+                <span id="comparedPrice">+4,800</span>
+                <span id="comparedRate"><small>▴</small>12<small>%</small></span>
+            </div>
+        </div>
+
+    </header>
+
+
+
+
+    <main>
+        <div class="chart">
+            <!-- 여기에 도트 차트 그리드를 추가할 예정 -->
+        </div>
+        <script>
+            drawChart();
+        </script>
+
+    </main>
+
+</body>
+
+<script>
+    let day = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+
+    const dateElement = document.getElementById('date');                // html의 date 요소 가져옴
+    const curTime = new Date();
+    //formattedDate로 현재 날짜 가져오기
+    const formattedDate = curTime.getFullYear() + "/" + curTime.getMonth() + "/" + curTime.getDate()
+        + "(" + day[curTime.getDay()] + ') ' + (curTime.getHours() < 10 ? '0' + curTime.getHours() : curTime.getHours()) + ':'
+        + (curTime.getMinutes() < 10 ? '0' + curTime.getMinutes() : curTime.getMinutes()) + (curTime.getHours() < 12 ? ' AM' : ' PM');
+
+    //html태그의 innerHTML값 수정
+    dateElement.innerHTML = formattedDate;
+
+
+    // setting 버튼 클릭 시 setting.html로 이동
+    document.getElementById('setting').addEventListener('click', function () {
+        window.location.href = 'inline_setting.html';
+    });
+    // info 버튼 클릭 시 info.html로 이동
+    document.getElementById('info').addEventListener('click', function () {
+        window.location.href = 'inline_info.html';
+    });
+</script>
+
+</html>

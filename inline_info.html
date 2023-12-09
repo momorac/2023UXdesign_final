@@ -1,0 +1,132 @@
+<html>
+
+<head>
+    <!-- 설정에 들어갈 값
+    option: 단위 / 컬러 테마 / 폰트 / 언어
+    stock setting : 종목 정보 / 이벤트 / 목표 손익률
+    -->
+    <meta charset="utf-8">
+    <style>
+        * {
+            font-family: 'DungGeunMo';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            color: aqua;
+        }
+
+        body {
+            background-color: black;
+        }
+
+
+        main {
+            width: 1000px;
+            height: 650px;
+
+            position: absolute;
+            left: 50%;
+            top: 55%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+
+            border-color: aqua;
+            border-radius: 6px;
+            border-width: 5px;
+            border-style: double;
+        }
+
+        #title {
+            font-size: 50pt;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #setting {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+
+        }
+
+        .div {
+            flex: 1;
+            /* background-color: rgb(30, 30, 30); */
+            box-sizing: border-box;
+            height: 90%;
+            margin: 30px;
+
+            text-align: left;
+
+        }
+
+        nav {
+            width: 50px;
+            height: 50px;
+
+            display: inline-block;
+            position: absolute;
+
+            top: 10px;
+            left: 15px;
+
+        }
+
+        button {
+            width: 42px;
+            height: 42px;
+            margin: 15px;
+
+            background-color: black;
+            border-color: #00ffff;
+            border-radius: 3px;
+            border-style: ridge;
+
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+
+        #backIcon {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            left: 21px;
+            top: 21px;
+            filter: invert(93%) sepia(100%) saturate(7500%) hue-rotate(104deg) brightness(104%) contrast(107%);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <button id = "back" title="back">
+            <img id="backIcon" src="https://static.thenounproject.com/png/644039-200.png" alt="back">
+        </button>
+    </nav>
+
+    <div id="title">INFORMATION</div>
+    <main>
+        <div id="info">
+            <div class="div" style="margin-right: 20px;">
+                <h1>ㅤabout this program</h1>
+                <hr style="border-color: aqua; height:2px;">
+                <p>sejong univ</p>
+                <p>design innovation</p>
+                <p>2023 UXdesign2</p>
+                <p>19011891 naeunKim</p>
+            </div>
+        </div>
+    </main>
+
+
+</body>
+<script>
+    document.getElementById('back').addEventListener('click', function () {
+        window.location.href = 'main.html';
+    });
+</script>
+
+</html>
