@@ -9,16 +9,21 @@
 
     <link href="style_main.css" rel="stylesheet">
     <style>
+        :root {
+            --mainBackgroundColor: black;
+            --mainForegroundColor: aqua;
+        }
+
         * {
             font-family: 'DOSGothic';
             src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
             font-weight: normal;
             font-style: normal;
-            color: aqua;
+            color: var(--mainForgroundColor);
         }
 
         body {
-            background-color: black;
+            background-color: var(--mainBackgroundColor);
         }
 
 
@@ -32,7 +37,7 @@
             transform: translate(-50%, -50%);
             text-align: center;
 
-            border-color: aqua;
+            border-color: var(--mainForgroundColor);
             border-radius: 6px;
             border-width: 5px;
             border-style: double;
@@ -80,8 +85,8 @@
             height: 42px;
             margin: 15px;
 
-            background-color: black;
-            border-color: #00ffff;
+            background-color: var(--mainBackgroundColor);
+            border-color: var(--mainForgroundColor);
             border-radius: 3px;
             border-style: ridge;
 
@@ -129,7 +134,7 @@
             <div class="setdiv">
                 <h1>ㅤBasic Option</h1>
                 <div id="basicSet">
-                    <hr style="border-color: aqua; height:2px;">
+                    <hr style="border-color:var(--mainForgroundColor); height:2px;">
 
                     <h2>ㅤLanguage</h2>
                     <div class="buttonset" id="languageButtons">
@@ -165,7 +170,7 @@
 
             <div class="setdiv" style="margin-left: 20px;">
                 <h1>ㅤStock Setting</h1>
-                <hr style="border-color: aqua; height:2px;">
+                <hr style="border-color: var(--mainForgroundColor); height:2px;">
                 <p>Stock</p>
                 <p>Event Setting</p>
                 <p>Target Profit/Loss Rate</p>
@@ -221,6 +226,7 @@
             element.style.fontFamily = selectedFont;
         });
     }
+
 
     //뒤로가기 버튼
     document.getElementById('back').addEventListener('click', function () {

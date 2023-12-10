@@ -49,6 +49,9 @@
 </body>
 
 <script>
+
+
+    
     const selectedFont = localStorage.getItem('selectedFont');
     if (selectedFont) {
         document.querySelectorAll('*').forEach(element => {
@@ -71,11 +74,11 @@
 
     // setting 버튼 클릭 시 setting.html로 이동
     document.getElementById('setting').addEventListener('click', function () {
-        window.location.href = 'inline_setting.html';
+        window.location.href = 'setting.html';
     });
     // info 버튼 클릭 시 info.html로 이동
     document.getElementById('info').addEventListener('click', function () {
-        window.location.href = 'inline_info.html';
+        window.location.href = 'info.html';
     });
 </script>
 

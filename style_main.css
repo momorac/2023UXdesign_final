@@ -1,3 +1,9 @@
+
+:root{
+    --mainBackgroundColor : black;
+    --mainForgroundColor : aqua;
+}
+
 @font-face {
     font-family: 'DOSGothic'; 
     font-style: 'normal';
@@ -31,11 +37,9 @@
     src: url('font/Galmuri11-Bold.ttf'); 
 }
 
-
-
 * {
     font-family: 'NEODunGeunMo';
-    color: aqua;
+    color: var(--mainForgroundColor);
 }
 
 body {
@@ -44,7 +48,7 @@ body {
 }
 
 header {
-    background-color: black;
+    background-color: var(--mainBackgroundColor);
 
     display: flex;
     position: absolute;
@@ -126,8 +130,8 @@ button {
     height: 42px;
     margin: 15px;
 
-    background-color: black;
-    border-color: aqua;
+    background-color: var(--mainBackgroundColor);
+    border-color: var(--mainForgroundColor);
     border-radius: 3px;
     border-style: ridge;
 
